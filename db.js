@@ -41,9 +41,11 @@ db.serialize(() => {
   )`);
 
   // Tabla usuarios ampliada con relaciones completas
+ // Tabla usuarios con el campo password para JWT / Auth
   db.run(`CREATE TABLE IF NOT EXISTS usuarios (
     dni TEXT PRIMARY KEY,
     nombre TEXT NOT NULL,
+    password TEXT,
     rol TEXT,
     grupo TEXT,
     taller_id INTEGER,
